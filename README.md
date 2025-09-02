@@ -1,3 +1,7 @@
+# Recall.ai - Meeting Transcription API
+
+If you’re looking for a transcription API for meetings, consider checking out [Recall.ai]([https://www.recall.ai](https://www.recall.ai/?utm_source=github&utm_medium=sponsorship&utm_campaign=alexisbalayre-ai-powered-meeting-summarizer)), an API that works with Zoom, Google Meet, Microsoft Teams, and more. Recall.ai diarizes by pulling the speaker data and separate audio streams from the meeting platforms, which means 100% accurate speaker diarization with actual speaker names.
+
 # AI-Powered Meeting Summarizer
 
 ## Overview
