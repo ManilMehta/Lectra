@@ -1,41 +1,38 @@
-# Recall.ai - Meeting Transcription API
-
-If you’re looking for a transcription API for meetings, consider checking out [Recall.ai](https://www.recall.ai/?utm_source=github&utm_medium=sponsorship&utm_campaign=alexisbalayre-ai-powered-meeting-summarizer), an API that works with Zoom, Google Meet, Microsoft Teams, and more. Recall.ai diarizes by pulling the speaker data and separate audio streams from the meeting platforms, which means 100% accurate speaker diarization with actual speaker names.
-
-# AI-Powered Meeting Summarizer
+# 📚 Lectra - AI-Powered Lecture Note Taker
 
 ## Overview
 
-The **AI-Powered Meeting Summarizer** is a Gradio-powered application that converts audio recordings of meetings into transcripts and provides concise summaries using `whisper.cpp` for audio-to-text conversion and `Ollama` for text summarization. This tool is ideal for quickly extracting key points, decisions, and action items from meetings.
-
-<img width="1512" alt="Screenshot 2024-10-01 at 10 05 32 PM" src="https://github.com/user-attachments/assets/5b93cfed-c853-4ebb-8d90-bbda58354192">
-
-
-https://github.com/user-attachments/assets/2f1de19d-0feb-4a35-a6ab-f9be8dabf512
-
-
-
+**Lectra** is an intelligent Gradio-powered application that converts lecture audio recordings into comprehensive, structured notes and study flashcards. Built with `whisper.cpp` for accurate audio-to-text conversion and `Ollama` (Llama 3.2) for intelligent note and flashcard generation, Lectra helps students transform their lecture recordings into effective study materials.
 
 ## Features
 
-- **Audio-to-Text Conversion**: Uses `whisper.cpp` to convert audio files into text.
-- **Text Summarization**: Uses models from the `Ollama` server to summarize the transcript.
-- **Multiple Models Support**: Supports different Whisper models (`base`, `small`, `medium`, `large-V3`) and any available model from the Ollama server.
-- **Translation**: Allows translation of non-English audio to English using Whisper.
-- **Gradio Interface**: Provides a user-friendly web interface to upload audio files, view summaries, and download transcripts.
+- **🎤 Audio-to-Text Conversion**: Uses `whisper.cpp` to accurately transcribe lecture audio files into text
+- **📖 Intelligent Note Generation**: Uses models from the `Ollama` server to create well-structured, comprehensive lecture notes with:
+  - Clear headings and subheadings
+  - Key concepts and definitions
+  - Important examples and explanations
+  - Main points and takeaways
+  - Formulas, equations, and technical details
+- **🃏 Flashcard Generation**: Automatically creates study flashcards from lecture content with:
+  - Questions/terms on the front
+  - Detailed answers/explanations on the back
+  - Focus on key definitions, concepts, and takeaways
+- **🎨 Modern UI**: Beautiful, intuitive interface with custom styling and organized tabs
+- **📥 Export Options**: Download transcripts, notes, and flashcards for offline study
+- **🔧 Multiple Models Support**: Supports different Whisper models (`base`, `small`, `medium`, `large-V3`) and any available model from the Ollama server
 
 ## Requirements
 
 - Python 3.x
 - [FFmpeg](https://www.ffmpeg.org/) (for audio processing)
 - [Whisper.cpp](https://github.com/ggerganov/whisper.cpp) (for audio-to-text conversion)
-- [Ollama server](https://ollama.com/) (for text summarization)
+- [Ollama server](https://ollama.com/) (for note and flashcard generation)
 - [Gradio](https://www.gradio.app/) (for the web interface)
 - [Requests](https://requests.readthedocs.io/en/latest/) (for handling API calls to the Ollama server)
 
 ## Pre-Installation
 
-Before running the application, ensure you have Ollama that is running on your local machine or a server. You can follow the instructions provided in the [Ollama repository](https://github.com/ollama/ollama) to set up the server. Do not forget to download and run a model from the Ollama server.
+Before running Lectra, ensure you have Ollama running on your local machine or a server. You can follow the instructions provided in the [Ollama repository](https://github.com/ollama/ollama) to set up the server. Don't forget to download and run a model from the Ollama server.
 
 ```bash
 # To install and run Llama 3.2
@@ -44,13 +41,13 @@ ollama run llama3.2
 
 ## Installation
 
-Follow the steps below to set up and run the application:
+Follow the steps below to set up and run Lectra:
 
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/AlexisBalayre/AI-Powered-Meeting-Summarizer
-cd AI-Powered-Meeting-Summarizer
+git clone https://github.com/yourusername/Lectra
+cd Lectra
 ```
 
 ### Step 2: Run the Setup Script
@@ -58,22 +55,22 @@ cd AI-Powered-Meeting-Summarizer
 To install all necessary dependencies (including Python virtual environment, `whisper.cpp`, FFmpeg, and Python packages), and to run the application, execute the provided setup script:
 
 ```bash
-chmod +x run_meeting_summarizer.sh
-./run_meeting_summarizer.sh
+chmod +x run_lectra.sh
+./run_lectra.sh
 ```
 
 This script will:
 
-- Create and activate a Python virtual environment.
-- Install necessary Python packages like `requests` and `gradio`.
-- Check if `FFmpeg` is installed and install it if missing.
-- Clone and build `whisper.cpp`.
-- Download the required Whisper model (default: `small`).
-- **Run the `main.py` script**, which will start the Gradio interface for the application.
+- Create and activate a Python virtual environment
+- Install necessary Python packages like `requests` and `gradio`
+- Check if `FFmpeg` is installed and install it if missing
+- Clone and build `whisper.cpp`
+- Download the required Whisper model (default: `small`)
+- **Run the `main.py` script**, which will start the Gradio interface for Lectra
 
-### Step 3: Accessing the Application
+### Step 3: Accessing Lectra
 
-Once the setup and execution are complete, Gradio will provide a URL (typically `http://127.0.0.1:7860`). Open this URL in your web browser to access the Meeting Summarizer interface.
+Once the setup and execution are complete, Gradio will provide a URL (typically `http://127.0.0.1:7860`). Open this URL in your web browser to access the Lectra interface.
 
 Alternatively, after setup, you can activate the virtual environment and run the Python script manually:
 
@@ -87,23 +84,35 @@ python main.py
 
 ## Usage
 
-### Uploading an Audio File
+### Processing a Lecture Recording
 
-1. **Upload an Audio File**: Click on the audio upload area and select an audio file in any supported format (e.g., `.wav`, `.mp3`).
-2. **Provide Context (Optional)**: You can provide additional context for better summarization (e.g., "Meeting about AI and Ethics").
-3. **Select Whisper Model**: Choose one of the available Whisper models (`base`, `small`, `medium`, `large-V3`) for audio-to-text conversion.
-4. **Select Summarization Model**: Choose a model from the available options retrieved from the `Ollama` server.
+1. **Upload an Audio File**: Click on the audio upload area and select a lecture recording in any supported format (e.g., `.wav`, `.mp3`, `.m4a`).
+
+2. **Provide Context (Optional)**: Add context about the course or subject (e.g., "Introduction to Machine Learning, Week 3") to help generate more accurate notes.
+
+3. **Select Models**:
+   - **Whisper Model**: Choose one of the available Whisper models (`base`, `small`, `medium`, `large-V3`) for audio-to-text conversion. Larger models are more accurate but slower.
+   - **LLM Model**: Choose a model from the available options retrieved from the `Ollama` server for note and flashcard generation.
+
+4. **Generate Flashcards**: Check the "Generate Flashcards" checkbox if you want flashcards created from the lecture.
+
+5. **Process**: Click the "🚀 Process Lecture" button to start processing.
 
 ### Viewing Results
 
-- After uploading an audio file, you will get a **Summary** of the transcript generated by the selected models.
-- You can also **download the full transcript** as a text file by clicking the provided link.
+After processing, you'll see three tabs:
+
+- **📖 Lecture Notes**: Comprehensive, structured notes from your lecture
+- **🃏 Flashcards**: Study flashcards with questions and answers (if generated)
+- **📄 Transcript**: Download the full transcript as a text file
+
+You can copy the notes and flashcards directly from the interface or download the transcript file.
 
 ## Customization
 
 ### Changing the Whisper Model
 
-By default, the Whisper model used is `small`. You can modify this in the `run_meeting_summarizer.sh` script by changing the `WHISPER_MODEL` variable:
+By default, the Whisper model used is `small`. You can modify this in the `run_lectra.sh` script by changing the `WHISPER_MODEL` variable:
 
 ```bash
 WHISPER_MODEL="medium"
@@ -135,17 +144,14 @@ To download a different Whisper model (e.g., `base`, `medium`, `large`), use the
 
    This will download the `.bin` file into the `whisper.cpp/models` directory.
 
-3. Once downloaded, the new model will automatically be available in the model dropdown when you restart the application.
+3. Once downloaded, the new model will automatically be available in the model dropdown when you restart Lectra.
 
-### Configuring Translation
+## Tips for Best Results
 
-By default, Whisper will detect the language of the audio file and translate it to English if necessary. This behavior is controlled by the `-l` flag in the `whisper.cpp` command.
-
-```bash
-./whisper.cpp/main -m ./whisper.cpp/models/ggml-{WHISPER_MODEL}.bin -l fr -f "{audio_file_wav}"
-```
-
-This flag tells Whisper to translate the audio into French regardless of the original language.
+1. **Provide Context**: Adding course/subject context helps the AI generate more relevant and accurate notes
+2. **Use Higher Quality Models**: For better accuracy, use `medium` or `large-V3` Whisper models (though they're slower)
+3. **Clear Audio**: Ensure your lecture recordings have clear audio for best transcription results
+4. **Review and Edit**: Always review the generated notes and flashcards, as AI-generated content may need refinement
 
 ## License
 
@@ -153,6 +159,11 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ## Acknowledgements
 
-- **whisper.cpp** by Georgi Gerganov for the audio-to-text conversion.
-- **Gradio** for the interactive web interface framework.
-- **Ollama** for providing large language models for summarization.
+- **whisper.cpp** by Georgi Gerganov for the audio-to-text conversion
+- **Gradio** for the interactive web interface framework
+- **Ollama** for providing large language models for note and flashcard generation
+- **Llama 3.2** by Meta for the language model capabilities
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
