@@ -1,4 +1,4 @@
-# 📚 Lectra - AI-Powered Lecture Note Taker
+# AI note taker
 
 ## Overview
 
@@ -6,8 +6,8 @@
 
 ## Features
 
-- **🎤 Audio-to-Text Conversion**: Uses `whisper.cpp` to accurately transcribe lecture audio files into text
-- **📖 Intelligent Note Generation**: Uses models from the `Ollama` server to create well-structured, comprehensive lecture notes with:
+- **Audio-to-Text Conversion**: Uses `whisper.cpp` to accurately transcribe lecture audio files into text
+- **Intelligent Note Generation**: Uses models from the `Ollama` server to create well-structured, comprehensive lecture notes with:
   - Clear headings and subheadings
   - Key concepts and definitions
   - Important examples and explanations
